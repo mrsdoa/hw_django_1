@@ -7,7 +7,7 @@
 <body>
     <h2><bold>Выберите раздел</bold></h2>
     {% for title, url in pages.items %}
-        <a href="{{ url }}"><p style="color:grey; font-size:15px">{{ title }}</p></a>
+        <a href="{{ url }}"><p style="color:grey; font-size:15px"><li>{{ title }}</li></p></a>
         <br>
     {% endfor %}
 </body>
