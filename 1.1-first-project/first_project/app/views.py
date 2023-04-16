@@ -36,7 +36,10 @@ def workdir_view(request):
     # по аналогии с `time_view`, напишите код,
     # который возвращает список файлов в рабочей 
     # директории
-    files = [f for f in listdir(r'C:\Users\Olesya.Dzhafarova\dj-homeworks') if isfile(join(r'C:\Users\Olesya.Dzhafarova\dj-homeworks', f))]
+    path = request.GET.get("path", r'C:\Users\Olesya.Dzhafarova\dj-homeworks')
+    files = [f for f in listdir(path)]
+    # если только файлы, то ниже
+    # files = [f for f in listdir(path) if isfile(join(path, f))]
     msg = f'Файлы рабочей директории: {files}'
     return HttpResponse(msg)
     # raise NotImplemented
